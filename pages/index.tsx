@@ -12,7 +12,7 @@ export default function Home() {
         🚧🛠 UNDER CONSTRUCTION 🛠🚧
       </main>
 
-      <footer className={styles.footer}>This is JJuhey's Blog</footer>
+      <footer className={styles.footer}>JJUHEY BLOG</footer>
     </div>
   )
 }
