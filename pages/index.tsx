@@ -23,7 +23,7 @@ export default function Home() {
     <Layout home={true}>
       📚 BLOG POSTS 📚
       <div className={styles.postList}>
-        {mockpost.map((post) => <PostCard post={post}/>)}
+        {mockpost.map((post) => <PostCard key={post.title} post={post}/>)}
       </div>
     </Layout>
   )
