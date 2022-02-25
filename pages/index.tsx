@@ -1,18 +1,30 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import PostCard from '../components/PostCard';
+import Layout from '../components/Layout';
+
+import styles from '../styles/Home.module.css';
+
+const mockpost = [
+  {
+    title: 'first-post',
+    summary: '2022.01.28',
+  },
+  {
+    title: 'second-post',
+    summary: '2022.02.25',
+  },
+  {
+    title: 'post3',
+    summary: 'content2',
+  },
+]
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>JJuhey</title>
-      </Head>
-
-      <main className={styles.main}>
-        🚧🛠 UNDER CONSTRUCTION 🛠🚧
-      </main>
-
-      <footer className={styles.footer}>JJUHEY BLOG</footer>
-    </div>
+    <Layout home={true}>
+      📚 BLOG POSTS 📚
+      <div className={styles.postList}>
+        {mockpost.map((post) => <PostCard post={post}/>)}
+      </div>
+    </Layout>
   )
 }

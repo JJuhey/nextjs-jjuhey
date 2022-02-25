@@ -1,0 +1,42 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 30px;
+  color: rgb(80, 57, 96);
+}
+
+.main > * {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contentArea {
+  width: 70%
+}
+
+.introArea {
+  width: 20%
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.borderCircle {
+  border-radius: 9999px;
+}

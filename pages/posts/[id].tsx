@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Head from 'next/head'
+
+import Layout from '../../components/layout';
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
@@ -28,16 +29,13 @@ export const getStaticProps: GetStaticProps = async context => {
 
 export default function Post({ postData }: PostProps) {
   return (
-    <div style={{ margin: '20px' }}>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      <article>
+    <Layout home={false}>
+      <article style={{ fontSize: '1rem', textAlign: 'left', color: 'black' }}>
         <h1>{postData.title}</h1>
         <div>{postData.date}</div>
         <br />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}></div>
       </article>
-    </div>
+    </Layout>
   )
 }
