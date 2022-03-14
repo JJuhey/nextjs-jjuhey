@@ -16,7 +16,7 @@ export default function Layout({ children, home }) {
       <main className={styles.main}>
         <div className={styles.contentArea}>
           <div>{children}</div>
-          <div style={{ fontSize: '1rem', textAlign: 'left', color: 'grey', marginTop: '10px' }}>
+          <div style={{ fontSize: '1rem', textAlign: 'left', color: 'grey', marginTop: '10px', marginBottom: '50px' }}>
             {!home && (<Link href='/'><a>← Back to home</a></Link>)}
           </div>
         </div>
