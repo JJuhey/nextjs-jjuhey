@@ -5,7 +5,7 @@ import layoutStyle from '../styles/Layout.module.css'
 
 const IntroductionCard = () => {
   return (
-    <Paper elevation={3} style={{ height: '400px', padding: '10px' }}>
+    <Paper elevation={3} style={{ height: '400px', padding: '10px', minWidth: '200px' }}>
       <Image
         priority
         src="/images/profile.jpeg"
