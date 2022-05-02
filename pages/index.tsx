@@ -13,9 +13,13 @@ const mockpost = [
     summary: '2022.02.25',
   },
   {
-    title: 'post3',
-    summary: 'content2',
+    title: 'third-post',
+    summary: '2022.03.24',
   },
+  {
+    title: 'figma-drawing',
+    summary: '2022.04.29'
+  }
 ]
 
 export default function Home() {
