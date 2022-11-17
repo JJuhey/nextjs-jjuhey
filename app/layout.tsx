@@ -6,8 +6,9 @@ const RootLayout = ({
   return (
     <html lang='en'>
       <body>
-        <h1>Hello NEXTJS</h1>
+        <header><h1>Hello NEXTJS</h1></header>
         {children}
+        <footer>JJUHEY BLOG</footer>
       </body>
     </html>
   );
