@@ -1,4 +1,8 @@
 import React from 'react';
+import './globals.css'
+
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 const RootLayout = ({
   children
@@ -6,9 +10,9 @@ const RootLayout = ({
   return (
     <html lang='en'>
       <body>
-        <header><h1>Hello NEXTJS</h1></header>
+        <Header/>
         {children}
-        <footer>JJUHEY BLOG</footer>
+        <Footer/>
       </body>
     </html>
   );
