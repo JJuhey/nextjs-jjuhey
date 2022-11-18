@@ -12,6 +12,7 @@ const BlogPage = async () => {
         포스팅 수: 
         <span className='pl-4 text-gray-500'>{projects.results.length}</span>
       </h1>
+      <h3 className='text-xl ml-4 text-purple-400'>미완성 페이지입니다. 눌러도 아직은 포스팅을 볼수없어요.</h3>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
         {projects.results.map(blog => {
           return (

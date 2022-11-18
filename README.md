@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -12,14 +12,17 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-* `/`: index page
-* `/about`
-* `/blog`
-* `/post`: deprecated
-
 ## Deploy on Vercel
 
 ```bash
 npm run build
 npm run start
 ```
+
+## Deployed URL
+[https://jjuhey.com](https://jjuhey.com)
+
+## Router Structure
+* `/`: main page
+* `/blog`: posting list with notion
+* ~~`/post`: deprecated~~

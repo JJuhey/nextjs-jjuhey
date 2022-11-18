@@ -12,11 +12,12 @@ const Header = () => {
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
           <a className="mr-5 hover:text-gray-900" href="/">Home</a>
-          <a className="mr-5 hover:text-gray-900" href="/about">About</a>
+          {/* <a className="mr-5 hover:text-gray-900" href="/about">About</a> */}
           <a className="mr-5 hover:text-gray-900" href="/blog">Blog</a>
-          <a className="mr-5 hover:text-gray-900" href="/contact">Contact</a>
+          {/* <a className="mr-5 hover:text-gray-900" href="/contact">Contact</a> */}
         </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+        <button className="inline-flex items-center bg-gray-200 border-0 py-2 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">
+          <a href='https://github.com/JJuhey/nextjs-jjuhey'>repository</a>
           <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
