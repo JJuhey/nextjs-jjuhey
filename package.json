@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "gray-matter": "^4.0.3",
     "lottie-web": "^5.9.6",
     "next": "^13.0.3",

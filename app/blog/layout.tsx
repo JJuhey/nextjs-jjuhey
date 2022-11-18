@@ -5,8 +5,9 @@ const BlogLayout = ({
 }: { children: React.ReactNode }) => {
   return (
     <section>
-      <h1>Blog Header</h1>
-      {children}
+      <div className='flex flex-col items-center min-h-screen px-4 mb-10'>
+        {children}
+      </div>
     </section>
   );
 }

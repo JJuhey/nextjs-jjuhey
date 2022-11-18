@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blog-card {
+  @apply flex flex-col m-3 text-gray-800 rounded-md w-full
+    transition duration-300 transform border border-gray-300
+    hover:scale-105 hover:shadow-lg
+}

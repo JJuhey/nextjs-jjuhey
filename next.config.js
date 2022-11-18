@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['dummyimage.com'],
+    domains: ['dummyimage.com', 'www.notion.so', 'images.unsplash.com'],
   },
 };
 
