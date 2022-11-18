@@ -6,17 +6,7 @@ import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
-
-  return fileNames.map(fileName => {
-    return {
-      params: { id: fileName.replace(/\.md$/, '') }
-    }
-  })
-}
-
-export async function getPostData(id: string) {
+async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -32,4 +22,15 @@ export async function getPostData(id: string) {
     contentHtml,
     ...result.data,
   }
+}
+
+export default async function Head({ params }) {
+  const post = await getPostData(params.title)
+
+  return (
+    <>
+      <h1>{params.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
+    </>
+  )
 }
