@@ -5,8 +5,9 @@ const PostLayout = ({
 }: { children: React.ReactNode }) => {
   return (
     <section>
-      {/* <h1>Post Header</h1> */}
-      {children}
+      <div className="m-10 flex min-h-full flex-column">
+        {children}
+      </div>
     </section>
   );
 }

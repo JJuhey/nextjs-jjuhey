@@ -12,11 +12,6 @@ const RootLayout = ({
       <body>
         <Header/>
         {children}
-        {/* <section className="text-gray-600 body-font">
-          <div className="container px-5 py-8 mx-auto">
-            {children}
-          </div>
-        </section> */}
         <Footer/>
       </body>
     </html>
