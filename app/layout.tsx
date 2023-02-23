@@ -1,8 +1,16 @@
 import React from 'react';
 import './globals.css'
+// core styles shared by all of react-notion-x (required)
+import 'react-notion-x/src/styles.css'
 
-import Header from '../components/header'
-import Footer from '../components/footer'
+// used for code syntax highlighting (optional)
+import 'prismjs/themes/prism-tomorrow.css'
+
+// used for rendering equations (optional)
+import 'katex/dist/katex.min.css'
+
+import Header from '../components/layout/header'
+import Footer from '../components/layout/footer'
 
 const RootLayout = ({
   children
