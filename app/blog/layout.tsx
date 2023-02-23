@@ -7,6 +7,7 @@ const BlogLayout = ({
   const [category, setCategory] = useState<string | null>(null);
 
   const onChangeCategory = (change: string | null) => {
+    if (!change) window.location.href = '/blog'
     setCategory(change)
   }
 
@@ -27,7 +28,7 @@ const BlogLayout = ({
           <div className={`w-28 text-center text-sm ${category === 'tech blog' && 'font-bold'} cursor-default hover:cursor-pointer`} onClick={() => onChangeCategory('tech blog')}>개발 블로그</div>
         </div>
       </section>
-      <section className="bg-gray-100">
+      <section className="bg-white">
         <div className="container mx-auto md:max-w-5xl pt-5">
           {React.cloneElement(children, { category })}
         </div>

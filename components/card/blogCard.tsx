@@ -15,7 +15,8 @@ const BlogCard = ({ data }) => {
   const summary = tags.map(t => t.name).join(', ')
 
   return (
-    <div className="flex flex-col my-2 hover:cursor-pointer">
+    <div className="flex flex-col my-2">
+      <a href={`/blog/${data.id}`}>
       {imgSrc ? (
         <div className="h-48 flex justify-center items-center rounded-lg overflow-hidden">
           <Image
@@ -36,6 +37,7 @@ const BlogCard = ({ data }) => {
           </svg>
         </div>
       )}
+      </a>
       <div className="py-2 w-16 text-indigo-700">
         <Tag>{category}</Tag>
       </div>
