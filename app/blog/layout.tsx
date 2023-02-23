@@ -7,8 +7,8 @@ const BlogLayout = ({
   const [category, setCategory] = useState<string | null>(null);
 
   const onChangeCategory = (change: string | null) => {
-    if (!change) window.location.href = '/blog'
     setCategory(change)
+    if (!change) window.location.href = '/blog'
   }
 
   return (
