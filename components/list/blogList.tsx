@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 
 import BlogCard from '../card/blogCard';
 
-const blogList = ({ blogs }: { blogs: any[] }) => {
+const BlogList = ({ blogs }: { blogs: any[] }) => {
   const [filteredBlogs, setFilteredBlogs] = useState(blogs)
   const searchParams = useSearchParams();
 
@@ -17,7 +17,7 @@ const blogList = ({ blogs }: { blogs: any[] }) => {
         : blogs.filter(b => b.properties.category.select?.name === category)
       setFilteredBlogs(filtered)
     }
-  }, [category]);
+  }, [category, blogs]);
 
   return (
     <div className="grid md:grid-cols-3 gap-5 mt-5">
@@ -30,4 +30,4 @@ const blogList = ({ blogs }: { blogs: any[] }) => {
   );
 }
 
-export default blogList;
+export default BlogList;
