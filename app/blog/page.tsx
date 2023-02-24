@@ -10,6 +10,12 @@ const BlogPage = async () => {
         "direction": "descending"
       }
     ],
+    filter: {
+      "property": "Status",
+      "status": {
+        "does_not_equal": "Draft",
+      },
+    },
     page_size: 100,
   }
 
