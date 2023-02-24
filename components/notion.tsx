@@ -9,7 +9,7 @@ import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
 import { NotionRenderer } from 'react-notion-x'
 
-// import { Loading } from './Loading'
+import Loading from './loading'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -84,7 +84,7 @@ export const NotionPage = ({
     'https://react-notion-x-demo.transitivebullsh.it/social.jpg'
 
   return (
-    <>
+    <React.Suspense fallback={Loading()}>
       <Head>
         {socialDescription && (
           <>
@@ -132,6 +132,6 @@ export const NotionPage = ({
         // NOTE: custom images will only take effect if previewImages is true and
         // if the image has a valid preview image defined in recordMap.preview_images[src]
       />
-    </>
+    </React.Suspense>
   )
 }
