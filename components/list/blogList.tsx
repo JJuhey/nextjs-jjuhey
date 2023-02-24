@@ -14,7 +14,7 @@ const BlogList = ({ blogs }: { blogs: any[] }) => {
     if (category) {
       const filtered = category === 'all'
         ? blogs
-        : blogs.filter(b => b.properties.category.select?.name === category)
+        : blogs.filter(b => b.properties.category.select?.name === category.replace(/_/g, ' '))
       setFilteredBlogs(filtered)
     }
   }, [category, blogs]);

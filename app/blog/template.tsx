@@ -1,11 +1,13 @@
 "use client"
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const Template = ({ children }: {
   children: React.ReactNode;
 }) => {
-  const [category, setCategory] = useState<string>('all');
+  const searchParams = useSearchParams();
+  const paramsCategory = searchParams.get('category')
+  const [category, setCategory] = useState<string>(paramsCategory ?? 'all');
   const router = useRouter()
 
   const onChangeCategory = (change: string) => {
@@ -19,7 +21,7 @@ const Template = ({ children }: {
         <div className="container mx-auto h-12 flex flex-row items-center justify-center">
           <div className={`w-28 text-center text-sm ${category === 'all' && 'font-bold text-black'} cursor-default hover:cursor-pointer`} onClick={() => onChangeCategory('all')}>전체</div>
           <div className={`w-28 text-center text-sm ${category === 'portfolio' && 'font-bold'} cursor-default hover:cursor-pointer`} onClick={() => onChangeCategory('portfolio')}>포트폴리오</div>
-          <div className={`w-28 text-center text-sm ${category === 'tech blog' && 'font-bold'} cursor-default hover:cursor-pointer`} onClick={() => onChangeCategory('tech blog')}>개발 블로그</div>
+          <div className={`w-28 text-center text-sm ${category === 'tech_blog' && 'font-bold'} cursor-default hover:cursor-pointer`} onClick={() => onChangeCategory('tech_blog')}>개발 블로그</div>
         </div>
       </section>
       <section className="bg-white">
