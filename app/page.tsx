@@ -23,21 +23,21 @@ const Page = () => {
             <Button className="mr-2 py-4 px-5 md:py-3 md:px-6 text-sm md:text-lg" href="/blog">Tech Blog</Button>
           </div>
           <div className="grid md:grid-cols-10 grid-cols-4 gap-4 mt-10">
-            <Tag>JavaScript</Tag>
-            <Tag>TypeScript</Tag>
-            <Tag>Nodejs</Tag>
-            <Tag>Express</Tag>
-            <Tag>MongoDB</Tag>
-            <Tag>PostgreSQL</Tag>
-            <Tag>React</Tag>
-            <Tag>Redux</Tag>
-            <Tag>github</Tag>
-            <Tag>AWS</Tag>
-            <Tag>GCP</Tag>
-            <Tag>Java</Tag>
-            <Tag>Oracle</Tag>
-            <Tag>HTML</Tag>
-            <Tag>CSS</Tag>
+            <Tag className="py-1.5">JavaScript</Tag>
+            <Tag className="py-1.5">TypeScript</Tag>
+            <Tag className="py-1.5">Nodejs</Tag>
+            <Tag className="py-1.5">Express</Tag>
+            <Tag className="py-1.5">MongoDB</Tag>
+            <Tag className="py-1.5">PostgreSQL</Tag>
+            <Tag className="py-1.5">React</Tag>
+            <Tag className="py-1.5">Redux</Tag>
+            <Tag className="py-1.5">github</Tag>
+            <Tag className="py-1.5">AWS</Tag>
+            <Tag className="py-1.5">GCP</Tag>
+            <Tag className="py-1.5">Java</Tag>
+            <Tag className="py-1.5">Oracle</Tag>
+            <Tag className="py-1.5">HTML</Tag>
+            <Tag className="py-1.5">CSS</Tag>
           </div>
         </div>
       </section>
