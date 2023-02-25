@@ -14,6 +14,8 @@ const BlogCard = ({ data }) => {
   const tags = data.properties.Tags.multi_select
   const summary = tags.map(t => t.name).join(', ')
 
+  const { status } = data.properties.Status
+
   return (
     <div className="flex flex-col my-2">
       <a href={`/blog/${data.id}`}>
@@ -38,8 +40,13 @@ const BlogCard = ({ data }) => {
         </div>
       )}
       </a>
-      <div className="py-2 w-16 text-indigo-700">
-        <Tag>{category}</Tag>
+      <div className="flex flex-row items-center">
+        <div className="py-2 w-16 text-indigo-700 mr-2">
+          <Tag className="py-1">{category}</Tag>
+        </div>
+        {status.color === 'green' && <div className={`border-solid border rounded-lg border-green-700 py-1 px-2 text-xs text-green-700`}>{status.name}</div>}
+        {status.color === 'blue' && <div className={`border-solid border rounded-lg border-blue-900 text-xs py-1 px-2 text-blue-900`}>{status.name}</div>}
+        {status.color === 'gray' && <div className={`border-solid border rounded-lg border-gray-500 text-xs py-1 px-2 text-gray-500`}>{status.name}</div>}
       </div>
       <div className="font-bold">{title}</div>
       <div className="text-gray-800">{summary ?? ' '}</div>

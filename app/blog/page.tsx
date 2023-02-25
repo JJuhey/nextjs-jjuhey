@@ -1,9 +1,8 @@
-import BlogCard from '../../components/card/blogCard';
-
 import { DATABASE_ID } from '../../config'
-import { getData } from '../../data/fetch';
+import { getData } from '../../utils/fetch';
+import BlogList from '../../components/list/blogList';
 
-const BlogPage = async ({ category }) => {
+const BlogPage = async () => {
   const body = {
     sorts: [
       {
@@ -11,21 +10,21 @@ const BlogPage = async ({ category }) => {
         "direction": "descending"
       }
     ],
+    filter: {
+      "property": "Status",
+      "status": {
+        "does_not_equal": "Draft",
+      },
+    },
     page_size: 100,
   }
 
-  const projects = await getData('POST', `databases/${DATABASE_ID}/query`, body);
+  const project = await getData('POST', `databases/${DATABASE_ID}/query`, body);
 
   return (
     <div className="min-h-screen px-2">
       {/* <h1>전체보기</h1> */}
-      <div className="grid md:grid-cols-3 gap-5 mt-5">
-        {projects.results.map(blog => {
-          return (
-            <BlogCard key={blog.id} data={blog} />
-          )
-        })}
-      </div>
+      <BlogList blogs={project.results}/>
     </div>
   );
 }

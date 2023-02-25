@@ -9,7 +9,7 @@ import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
 import { NotionRenderer } from 'react-notion-x'
 
-// import { Loading } from './Loading'
+import Loading from './loading'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -110,28 +110,29 @@ export const NotionPage = ({
         <meta name='twitter:creator' content='@transitive_bs' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <React.Suspense fallback={Loading()}>
+        <NotionRenderer
+          recordMap={recordMap}
+          fullPage={true}
+          darkMode={false}
+          rootDomain={rootDomain}
+          rootPageId={rootPageId}
+          isShowingSearch={true}
+          previewImages={previewImagesEnabled}
+          components={{
+            nextImage: Image,
+            nextLink: Link,
+            Code,
+            Collection,
+            Equation,
+            Pdf,
+            Modal,
+          }}
 
-      <NotionRenderer
-        recordMap={recordMap}
-        fullPage={true}
-        darkMode={false}
-        rootDomain={rootDomain}
-        rootPageId={rootPageId}
-        isShowingSearch={true}
-        previewImages={previewImagesEnabled}
-        components={{
-          nextImage: Image,
-          nextLink: Link,
-          Code,
-          Collection,
-          Equation,
-          Pdf,
-          Modal,
-        }}
-
-        // NOTE: custom images will only take effect if previewImages is true and
-        // if the image has a valid preview image defined in recordMap.preview_images[src]
-      />
+          // NOTE: custom images will only take effect if previewImages is true and
+          // if the image has a valid preview image defined in recordMap.preview_images[src]
+        />
+      </React.Suspense>
     </>
   )
 }

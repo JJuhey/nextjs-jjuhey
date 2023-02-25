@@ -1,8 +1,7 @@
 import React from 'react'
-import { ExtendedRecordMap } from 'notion-types'
 
 import { NotionPage } from '../../../components/notion'
-import { notion } from '../../../data/fetch'
+import { notion } from '../../../utils/fetch'
 
 const BlogDetailPage = async ({ params }) => {
   const { id } = params
