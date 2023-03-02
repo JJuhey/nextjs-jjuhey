@@ -7,7 +7,7 @@ const BlogDetailLayout = ({
   return (
     <>
       <section>{children}</section>
-      <div className="px-24 pb-10">
+      <div className="px-5 md:px-24 pb-10">
         <div className="pb-5">
           <a className="text-gray-500 hover:underline" href="/blog">← Go to back</a>
         </div>
