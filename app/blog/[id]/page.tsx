@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { NotionPage } from '../../../components/notion'
 import { notion } from '../../../utils/fetch'
+
+import { NotionPage } from '../../../components/notion'
 
 const BlogDetailPage = async ({ params }) => {
   const { id } = params
