@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { NotionPage } from '../../../components/notion'
 import { notion } from '../../../utils/fetch'
+
+import { NotionPage } from '../../../components/notion'
 
 const BlogDetailPage = async ({ params }) => {
   const { id } = params
@@ -11,6 +12,7 @@ const BlogDetailPage = async ({ params }) => {
   try {
     recordMap = await notion.getPage(pageId)
     // console.log(recordMap)
+    // recordMap.preview_images[src] =
   } catch(err) {
     console.error(err)
   }

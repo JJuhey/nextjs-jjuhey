@@ -118,6 +118,7 @@ export const NotionPage = ({
           rootDomain={rootDomain}
           rootPageId={rootPageId}
           isShowingSearch={true}
+          disableHeader={true}
           previewImages={previewImagesEnabled}
           components={{
             nextImage: Image,
