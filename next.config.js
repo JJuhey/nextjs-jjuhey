@@ -15,24 +15,4 @@ const nextConfig = {
   }
 };
 
-module.exports = nextConfig
-// const path = require('path');
-// // ...
-// const nextConfig = phase => {
-//   //...
-// webpack(config, { webpack }) {
-// 			config.resolve = {
-// 				alias: {
-// 					'@services': path.resolve(__dirname, 'src/services'),
-// 					'@utils': path.resolve(__dirname, 'src/utils'),
-// 					'@hooks': path.resolve(__dirname, 'src/hooks'),
-// 					'@components': path.resolve(__dirname, 'src/components')
-// 				},
-// 				...config.resolve
-// 			};
-// 			return config;
-// 		}
-//     //...
-// }
-
-// module.exports = phase => nextConfig(phase);
+module.exports = nextConfig;
