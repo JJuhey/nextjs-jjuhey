@@ -1,15 +1,15 @@
 "use client"
-import * as React from 'react'
-import dynamic from 'next/dynamic'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import * as React from 'react';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { ExtendedRecordMap } from 'notion-types'
-import { getPageTitle } from 'notion-utils'
-import { NotionRenderer } from 'react-notion-x'
+import { ExtendedRecordMap } from 'notion-types';
+import { getPageTitle } from 'notion-utils';
+import { NotionRenderer } from 'react-notion-x';
 
-import Loading from './loading'
+import Loading from '@components/loading'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LoadingCard from '../../components/card/loadingCard';
+import LoadingCard from '@components/card/loadingCard';
 
 const BlogLoading = () => {
   return (

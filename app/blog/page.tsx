@@ -1,6 +1,8 @@
-import { DATABASE_ID } from '../../config'
-import { getData } from '../../utils/fetch';
-import BlogList from '../../components/list/blogList';
+import { DATABASE_ID } from 'config'
+
+import { getData } from '@utils/fetch';
+
+import BlogList from '@components/list/blogList';
 
 const BlogPage = async () => {
   const body = {

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 
-import Button from '../button';
+import Button from '@components/button';
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
