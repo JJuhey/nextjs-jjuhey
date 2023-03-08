@@ -12,6 +12,7 @@ const BlogDetailPage = async ({ params }) => {
   try {
     recordMap = await notion.getPage(pageId)
     // console.log(recordMap)
+    // recordMap.preview_images[src] =
   } catch(err) {
     console.error(err)
   }

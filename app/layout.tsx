@@ -9,6 +9,9 @@ import 'prismjs/themes/prism-tomorrow.css'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
 
+// skeleton for loading
+import 'react-loading-skeleton/dist/skeleton.css'
+
 import Header from '../components/layout/header'
 import Footer from '../components/layout/footer'
 

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
+import BlogLoading from './loading'
+
 const Template = ({ children }: {
   children: React.ReactNode;
 }) => {
@@ -18,6 +20,8 @@ const Template = ({ children }: {
     router.push(`/blog?category=${change}`)
   }
 
+  const isLoading = paramsCategory && paramsCategory !== category
+
   return (
     <>
       {isBlogDetailPage || (
@@ -30,7 +34,9 @@ const Template = ({ children }: {
         </section>
       )}
       <section className="bg-white">
-        <div className="container mx-auto md:max-w-5xl pt-5">{children}</div>
+        <div className="container mx-auto md:max-w-5xl pt-5">
+          {isLoading && !isBlogDetailPage ? <BlogLoading /> : children}
+        </div>
       </section>
     </>
   );
