@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`sticky top-0 ${scrollY === 0 ? 'bg-black' : 'bg-white'}`}>
+    <header className={`sticky top-0 ${scrollY === 0 ? 'bg-black' : 'bg-white'} z-10`}>
       <div className="container mx-auto max-w-5xl	flex p-4 flex-row items-center">
         <a className="title-font font-medium" href="/">
           {scrollY === 0 ? (
