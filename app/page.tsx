@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Button from '../components/button'
-import Tag from '../components/tag'
-import IntroCard from '../components/card/introCard';
+import Button from '@components/button';
+import Tag from '@components/tag';
+import IntroCard from '@components/card/introCard';
 
 const Page = () => {
   return (

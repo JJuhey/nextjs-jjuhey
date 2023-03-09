@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-import BlogCard from '../card/blogCard';
+import BlogCard from '@components/card/blogCard';
 
 const BlogList = ({ blogs }: { blogs: any[] }) => {
   const [filteredBlogs, setFilteredBlogs] = useState(blogs)

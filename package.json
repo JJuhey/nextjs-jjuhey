@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "babel-plugin-module-resolver": "^5.0.0",
     "dotenv": "^16.0.3",
     "gray-matter": "^4.0.3",
     "lottie-web": "^5.9.6",
