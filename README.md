@@ -26,3 +26,5 @@ npm run start
 * `/`: main page
 * `/blog`: posting list with notion
 * ~~`/post`: deprecated~~
+
+## test for main branch
