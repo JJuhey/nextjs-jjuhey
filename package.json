@@ -22,7 +22,8 @@
     "react-lottie-player": "^1.5.0",
     "react-notion-x": "^6.16.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "typeit-react": "^2.6.4"
   },
   "devDependencies": {
     "@types/node": "^17.0.13",

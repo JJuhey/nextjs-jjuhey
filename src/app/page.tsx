@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@components/button';
 import Tag from '@components/tag';
 import IntroCard from '@components/card/introCard';
+import TypeItWrapper from '@components/typeIt';
 
 const Page = () => {
   const skills = ['JavaScript', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'React', 'Redux', 'Next.js', 'tailwindCSS', 'github', 'AWS', 'GCP', 'Java', 'Oracle', 'HTML', 'CSS']
@@ -14,7 +15,7 @@ const Page = () => {
             <div className="md:pb-5">Hello,</div>
             <div className="md:pb-5 font-extrabold">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-                개발자 쭈헤이
+                <TypeItWrapper>개발자 쭈헤이</TypeItWrapper>
               </span>
             </div>
             <div className="pb-5">공간에 놀러오신걸 환영합니다.</div>
