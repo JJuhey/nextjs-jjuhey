@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Loading from '@components/loading';
+import Loading from 'src/components/loading';
 
 const BlogDetailLoading = () => {
   return (

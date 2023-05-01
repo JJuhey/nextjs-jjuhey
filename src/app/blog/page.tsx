@@ -1,4 +1,4 @@
-import { DATABASE_ID } from 'config'
+import { DATABASE_ID } from 'src/config'
 
 import { getData } from '@utils/fetch';
 

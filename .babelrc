@@ -10,9 +10,9 @@
           "."
         ],
         "alias": {
-          "@app": "./app",
-          "@utils": "./utils",
-          "@components": "./components"
+          "@app": "./src/app",
+          "@utils": "./src/utils",
+          "@components": "./src/components"
         }
       }
     ]

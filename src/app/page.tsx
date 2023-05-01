@@ -24,10 +24,10 @@ const Page = () => {
             <Button className="mr-2 py-4 px-5 md:py-3 md:px-6 text-sm md:text-lg" href="/blog">Tech Blog</Button>
           </div>
           <div className="flex flex-row mt-10 animate-[lin1_10s_linear_infinite] -ml-[200px]">
-            {skills.map(s => <Tag className="py-1.5 min-w-[80px] mr-3">{s}</Tag>)}
+            {skills.map(s => <Tag key={`${s}-1`} className="py-1.5 min-w-[80px] mr-3">{s}</Tag>)}
           </div>
           <div className="flex flex-row mt-5 animate-[lin2_10s_linear_infinite] -ml-[500px]">
-            {skills.map(s => <Tag className="py-1.5 min-w-[80px] mr-3">{s}</Tag>)}
+            {skills.map(s => <Tag key={`${s}-2`} className="py-1.5 min-w-[80px] mr-3">{s}</Tag>)}
           </div>
         </div>
       </section>
