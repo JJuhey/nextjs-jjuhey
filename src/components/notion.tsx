@@ -9,7 +9,7 @@ import { ExtendedRecordMap } from 'notion-types';
 import { getPageTitle } from 'notion-utils';
 import { NotionRenderer } from 'react-notion-x';
 
-import Loading from '@components/loading'
+import Loading from 'src/components/loading'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components

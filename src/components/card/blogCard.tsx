@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import Tag from '@components/tag';
+import Tag from 'src/components/tag';
 
 const BlogCard = ({ data }) => {
   const title = data.properties.Title.title[0].plain_text

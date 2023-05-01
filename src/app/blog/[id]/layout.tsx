@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Utterances from '@components/utterances';
+import Utterances from 'src/components/utterances';
 
 const BlogDetailLayout = ({
   children
