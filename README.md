@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+이 레포는 제 개인블로그 사이트를 운영하려고 만들었습니다.
 
 ## Getting Started
 
