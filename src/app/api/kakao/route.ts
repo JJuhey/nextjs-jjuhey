@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const body: KakaoBody = await request.json();
   const kakaoKey = request.headers.get("kakao-api-key");
-  if (kakaoKey !== "dsa4fdbods1kz3aqhbz4") {
+  if (kakaoKey !== process.env.KAKAO_API_KEY) {
     return new Response("Unauthorized (3)", { status: 403 });
   }
   // console.dir(body, { depth: 5 });
