@@ -40,7 +40,7 @@ const Header = () => {
           )}
         </a>
         <div className="flex-auto"/>
-        <Button className="py-2 px-3 md:py-2 md:px-4 text-xs md:text-sm" href="https://github.com/JJuhey/nextjs-jjuhey">알아보기</Button>
+        <Button className="py-2 px-3 md:py-2 md:px-4 text-xs md:text-sm" href="https://youtube.com/@jjuhey">Youtube</Button>
       </div>
     </header>
   );

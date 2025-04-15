@@ -3,7 +3,6 @@ import React from 'react';
 import Button from '@components/button';
 import Tag from '@components/tag';
 import IntroCard from '@components/card/introCard';
-import TypeItWrapper from '@components/typeIt';
 
 const Page = () => {
   const skills = ['JavaScript', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'React', 'Redux', 'Next.js', 'tailwindCSS', 'github', 'AWS', 'GCP', 'Java', 'Oracle', 'HTML', 'CSS']
@@ -15,14 +14,13 @@ const Page = () => {
             <div className="md:pb-5">Hello,</div>
             <div className="md:pb-5 font-extrabold">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-                <TypeItWrapper>개발자 쭈헤이</TypeItWrapper>
+                개발자 쭈헤이
               </span>
             </div>
             <div className="pb-5">공간에 놀러오신걸 환영합니다.</div>
           </div>
           <div className="flex flex-row-reverse">
-            <Button className="mr-2 py-4 px-5 md:py-3 md:px-6 text-sm md:text-lg" href="https://youtube.com/@jjuhey">Youtube</Button>
-            <Button className="mr-2 py-4 px-5 md:py-3 md:px-6 text-sm md:text-lg" href="/blog">Tech Blog</Button>
+            {/* <Button className="mr-2 py-4 px-5 md:py-3 md:px-6 text-sm md:text-lg" href="https://youtube.com/@jjuhey">Youtube</Button> */}
           </div>
           <div className="flex flex-row mt-10 animate-[lin1_10s_linear_infinite] -ml-[200px]">
             {skills.map(s => <Tag key={`${s}-1`} className="py-1.5 min-w-[80px] mr-3">{s}</Tag>)}

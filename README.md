@@ -24,7 +24,7 @@ npm run start
 
 ## Router Structure
 * `/`: main page
-* `/blog`: posting list with notion
+* ~~`/blog`: posting list with notion~~
 * ~~`/post`: deprecated~~
 
 ## test for main branch
