@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "babel-plugin-module-resolver": "^5.0.0",
     "dotenv": "^16.0.3",
     "gray-matter": "^4.0.3",
@@ -16,6 +17,7 @@
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
     "notion-utils": "^6.16.0",
+    "openai": "^4.94.0",
     "react": "18",
     "react-dom": "18",
     "react-loading-skeleton": "^3.2.0",
