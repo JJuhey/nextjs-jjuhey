@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { NextRequest, NextResponse } from "next/server";
 import { OpenAI } from "openai";
 
-export const supabaseInstance = createClient(
+const supabaseInstance = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_API_KEY
 );
@@ -24,17 +24,8 @@ export async function POST(request: NextRequest) {
   const kakaoUserId = body?.userRequest?.user?.id;
   const userKey = body?.userRequest?.user?.properties?.plusfriendUserKey ?? kakaoUserId;
   // console.log(userEmail, kakaoUserId, userKey);
-
-  const isMyAccount = userKey === "SO5cKFWnLPaE";
-  await supabaseInstance.from("kakao-chat").insert({
-    kakao_id: userKey,
-    text: userInput,
-    type: "user",
-    rawdata: body,
-  });
   // console.log(res);
 
-  let response = null;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const isEmail = emailRegex.test(userInput);
   if (isEmail) {
@@ -50,6 +41,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(getResponse(`${name}님, 안녕하세요`));
   }
+
+  // 대화기록
+  await supabaseInstance.from("kakao-chat").insert({
+    kakao_id: userKey,
+    text: userInput,
+    type: "user",
+    rawdata: body,
+  });
 
   if (body?.flow?.lastBlock?.name === "조각의 이유") {
     return NextResponse.json(getResponse("오늘의 조각을 기억할게요."));
