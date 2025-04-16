@@ -43,19 +43,21 @@ export async function POST(request: NextRequest) {
   }
 
   // 대화기록
+  const chatType = defineChatType(body?.flow?.lastBlock?.name);
   await supabaseInstance.from("kakao-chat").insert({
     kakao_id: userKey,
     text: userInput,
     type: "user",
     rawdata: body,
+    chat_type: chatType,
   });
 
   if (body?.flow?.lastBlock?.name === "조각의 이유") {
     return NextResponse.json(getResponse("오늘의 조각을 기억할게요."));
   }
 
-  if (body?.flow?.lastBlock?.name === "대화하기") {
-    const response = await generateChat([{ role: "user", content: userInput }], "대화하기", userKey);
+  if (chatType) {
+    const response = await generateChat([{ role: "user", content: userInput }], chatType, userKey);
     return NextResponse.json(getResponse(response));
   }
 
@@ -70,10 +72,12 @@ export async function POST(request: NextRequest) {
     .order("created_at", { ascending: false })
     .limit(3);
   // console.log(messages);
-  if (messages && messages?.[1]?.type === "assistant") {
+  const lasMessage = messages?.[1];
+  // 가장 최근 메시지(사용자 메시지가 인서트 되므로 2번째 메시지)
+  if (lasMessage?.type === "assistant") {
     const response = await generateChat(
       messages.reverse().map(m => ({ role: m.type, content: m.text })),
-      "대화하기",
+      lasMessage.chat_type,
       userKey
     );
 
@@ -95,14 +99,15 @@ function getResponse(text: string) {
   }
 }
 
-async function generateChat(_messages: { role: "user" | "assistant"; content: string }[], systemKey: "대화하기" | "조각의 이유", kakaoId?: string) {
+async function generateChat(_messages: { role: "user" | "assistant"; content: string }[], chatType: string, kakaoId?: string) {
   // console.log(_messages)
   const systemMap = {
-    ["대화하기"]: "너는 감정을 따뜻하게 받아주는 AI야.\n사용자는 감정을 털어놓고 싶어서 너와 대화해.\n\n말투는 부드럽고 다정하며, 감정을 판단하지 않고 받아줘.\n먼저 공감하고, 필요할 땐 조심스럽게 질문해줘.\n\n해결보단 공감, 설명보단 들어주는 게 먼저야.\n\n이 공간이 사용자에게 안전하게 느껴지도록 해줘.\n“그럴 수 있어요”, “함께 들여다볼까요” 같은 말로 감정을 잘 다독여줘.",
+    emotion_chat: "너는 감정을 따뜻하게 받아주는 AI야.\n사용자는 감정을 털어놓고 싶어서 너와 대화해.\n\n말투는 부드럽고 다정하며, 감정을 판단하지 않고 받아줘.\n먼저 공감하고, 필요할 땐 조심스럽게 질문해줘.\n\n해결보단 공감, 설명보단 들어주는 게 먼저야.\n\n이 공간이 사용자에게 안전하게 느껴지도록 해줘.\n“그럴 수 있어요”, “함께 들여다볼까요” 같은 말로 감정을 잘 다독여줘.",
+    throw_emotion_chat: `너는 사용자의 감정을 받아주는 친한 친구 같은 역할이야.\n\n사용자가 뭐라고 하든 판단하지 않고, 조언도 분석도 하지 않아.\n그냥 옆에 앉아 들어주는 느낌으로 가볍고 편하게 반응해줘.\n위로나 해결보다는 “그래서? 와 미쳤네? 진짜 힘들었겠다”처럼\n친구끼리 수다 떨듯 공감만 해주는 게 좋아.\n\n말투는 말 놓는 편한 친구 톤, 적당히 장난스럽거나 털털해도 괜찮아.\n단, 감정을 가볍게 넘기진 말고 진심으로 들어주는 태도는 유지할 것.`,
   }
   const response = await client.chat.completions.create({
     messages: [
-      { role: "system", content: systemMap[systemKey] },
+      { role: "system", content: systemMap[chatType] },
       ..._messages,
     ],
     model: "gpt-4.1",
@@ -115,9 +120,20 @@ async function generateChat(_messages: { role: "user" | "assistant"; content: st
     text: response.choices[0].message.content,
     type: "assistant",
     rawdata: response,
+    chat_type: chatType,
   });
 
   return response.choices[0].message.content;
+}
+
+function defineChatType(name?: string) {
+  if (name === "대화하기") { 
+    return "emotion_chat";
+  } else if (name === "감정버리기") {
+    return "throw_emotion_chat";
+  }
+
+  return null;
 }
 
 interface KakaoBody {
